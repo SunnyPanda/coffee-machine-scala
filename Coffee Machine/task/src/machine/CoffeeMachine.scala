@@ -1,12 +1,14 @@
 package machine
 
+import scala.io.StdIn.readInt
+
 object CoffeeMachine extends App {
-  val makingCoffee: String = """Starting to make a coffee
-                               |Grinding coffee beans
-                               |Boiling water
-                               |Mixing boiled water with crushed coffee beans
-                               |Pouring coffee into the cup
-                               |Pouring some milk into the cup
-                               |Coffee is ready!""".stripMargin
-  println(makingCoffee)
+  println("Write how many cups of coffee you will need:")
+  val cupsOfCoffee = readInt
+  println(s"For $cupsOfCoffee cups of coffee you will need:")
+  println(
+    s"""${cupsOfCoffee * 200} ml of water
+       |${cupsOfCoffee * 50} ml of milk
+       |${cupsOfCoffee * 15} g of coffee beans
+       |""".stripMargin)
 }
